@@ -5,11 +5,12 @@ development:
     default:
       # Mongoid can connect to a URI accepted by the driver:
       # uri: mongodb://user:password@mongodb.domain.com:27017/hello_world_rails_mongodb_development
+      # uri: mongodb://mongoadmin:mongoadmin123@localhost:27017/hello_world_rails_mongodb_development
 
       # Otherwise define the parameters separately.
       # This defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: hello_world_rails_mongodb_development
+      database: hwr_mongodb_development
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -32,10 +33,10 @@ development:
         #     - use: web
 
         # The name of the user for authentication.
-        # user: 'user'
+        user: 'mongoadmin'
 
         # The password of the user for authentication.
-        # password: 'password'
+        password: 'mongoadmin123'
 
         # The user's database roles.
         # roles:
@@ -49,7 +50,7 @@ development:
 
         # The database or source to authenticate the user against.
         # (default: the database specified above or admin)
-        # auth_source: admin
+        auth_source: admin
 
         # Force a the driver cluster to behave in a certain manner instead of auto-
         # discovering. Can be one of: :direct, :replica_set, :sharded. Set to :direct
@@ -176,7 +177,7 @@ development:
 test:
   clients:
     default:
-      database: hello_world_rails_mongodb_test
+      database: hwr_mongodb_development_test
       hosts:
         - localhost:27017
       options:
